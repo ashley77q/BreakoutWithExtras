@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
     public GameObject Paddle;
     public GameObject deathParticles;
     public static GameManager instance = null;
-    public Text score_count;
-    static public int score = 0;
     
 
     private GameObject clonePaddle;
@@ -55,7 +53,7 @@ public class GameManager : MonoBehaviour
             YouWon.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
-
+            
 
         }
         if (lives < 1)
@@ -63,14 +61,23 @@ public class GameManager : MonoBehaviour
             GameOver.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
-
+            
         }
+        
 
     }
+
     //Reloading the game when the player has lost all of their lives
     void Reset()
     {
+        //Reset the score board
+        if (lives < 1)
+        {
+            Time.timeScale = .25f;
+            Invoke("Resset", ScoreScript.scoreValue = 0);
 
+
+        }
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainGame");
 
@@ -97,6 +104,7 @@ public class GameManager : MonoBehaviour
     {
         bricks--;
         CheckGameOver();
+       
     }
 
 }
