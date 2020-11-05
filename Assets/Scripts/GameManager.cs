@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         if (lives < 1)
         {
             Time.timeScale = .25f;
-            Invoke("Resset", ScoreScript.scoreValue = 0);
+            Invoke("Reset", ScoreScript.scoreValue = 0);
 
 
         }

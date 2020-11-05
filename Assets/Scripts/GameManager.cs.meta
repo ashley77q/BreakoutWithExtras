@@ -3,7 +3,13 @@ guid: 46d07e72a016d4d47a76f063950fdee9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - livesText: {instanceID: 0}
+  - GameOver: {instanceID: 0}
+  - YouWon: {instanceID: 0}
+  - BricksPrefab: {instanceID: 0}
+  - Paddle: {instanceID: 0}
+  - deathParticles: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
