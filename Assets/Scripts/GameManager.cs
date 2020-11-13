@@ -21,11 +21,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject clonePaddle;
 
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,14 +30,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         Setup();
+
+
     }
 
     //Cloning the paddle and ball when the player starts a new game
     public void Setup()
     {
         clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
-        Instantiate(BricksPrefab, transform.position, Quaternion.identity);
-        
+        var Instantiatedbrick = Instantiate(BricksPrefab, transform.position, Quaternion.identity);
+        Instantiatedbrick.tag = BricksPrefab.tag;
     }
 
     //Checking for when game is over, also added a slow motion for dramatic effect when the game is over.
