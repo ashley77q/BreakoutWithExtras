@@ -7,7 +7,9 @@ public class Bricks : MonoBehaviour
 
     public int block_health = 7;
     public GameObject BrickParticle;
-    private int score_multiplier = 1;
+    private int score_multiplier = 0;
+ 
+    public Material white;
 
     void Start()
     {
@@ -16,7 +18,7 @@ public class Bricks : MonoBehaviour
         {
 
             case "Red":
-                block_health = 4;
+                block_health = 3;
                 score_multiplier = 5;
                 break;
 
@@ -26,14 +28,13 @@ public class Bricks : MonoBehaviour
                 break;
 
             case "Green":
-                block_health = 1;
+                block_health = 3;
                 score_multiplier = 1;
                 break;
 
-
         }
+        
 
-      
     }
    
 
@@ -42,22 +43,23 @@ public class Bricks : MonoBehaviour
         Instantiate(BrickParticle, transform.position, Quaternion.identity);
         if (other.gameObject.name == "Ball")
             block_health--;
-        
+
+        if (block_health <= 3)
+        {
+            GetComponent<MeshRenderer>().material = white;
+
+            
+        }
+
         if (block_health <= 0)
         {
 
             //When a block is destroyed increase the score
             ScoreScript.scoreValue += score_multiplier;
-
-
-
             GameManager.instance.DestroyBrick();
             Destroy(gameObject);
 
         }
-
-       
-
 
     }
 
