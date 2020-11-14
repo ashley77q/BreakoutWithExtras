@@ -18,22 +18,23 @@ public class Bricks : MonoBehaviour
         {
 
             case "Red":
-                block_health = 3;
+                block_health = 2;
                 score_multiplier = 5;
                 break;
 
             case "Yellow":
-                block_health = 3;
+                block_health = 2;
                 score_multiplier = 3;
                 break;
 
             case "Green":
-                block_health = 3;
+                block_health = 2;
                 score_multiplier = 1;
                 break;
 
         }
-        
+
+       
 
     }
    
@@ -41,14 +42,16 @@ public class Bricks : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         Instantiate(BrickParticle, transform.position, Quaternion.identity);
-        if (other.gameObject.name == "Ball")
-            block_health--;
+        {
+            if (other.gameObject.name == "Ball")
+                block_health --;
+        }
 
-        if (block_health <= 3)
+        if (block_health <= 2)
         {
             GetComponent<MeshRenderer>().material = white;
 
-            
+
         }
 
         if (block_health <= 0)
@@ -60,6 +63,7 @@ public class Bricks : MonoBehaviour
             Destroy(gameObject);
 
         }
+        
 
     }
 
