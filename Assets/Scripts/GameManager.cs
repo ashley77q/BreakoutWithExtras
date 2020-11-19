@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         {
             YouWon.SetActive(true);
             Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
+            Invoke("aaa", resetDelay);
             
 
         }
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         {
             GameOver.SetActive(true);
             Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
+            Invoke("aaa", resetDelay);
             
         }
         
@@ -65,13 +65,13 @@ public class GameManager : MonoBehaviour
     }
 
     //Reloading the game when the player has lost all of their lives
-    void Reset()
+    void aaa()
     {
         //Reset the score board
         if (lives < 1)
         {
             Time.timeScale = .25f;
-            Invoke("Reset", ScoreScript.scoreValue = 0);
+            Invoke("aaa", ScoreScript.scoreValue = 0);
 
 
         }
