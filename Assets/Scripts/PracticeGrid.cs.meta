@@ -3,7 +3,11 @@ guid: b7674f8bff7704e4682daa44bf561e26
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PracticeGreenCube: {fileID: 4200176172445534420, guid: cfc59322c0cdb4d3a9224b36a26cdeb0,
+      type: 3}
+  - PracticeOrangeCube: {instanceID: 0}
+  - PracticeRedCube: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
