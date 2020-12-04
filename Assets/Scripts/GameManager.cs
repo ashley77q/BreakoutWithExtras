@@ -13,11 +13,19 @@ public class GameManager : MonoBehaviour
     public Text livesText;
     public GameObject GameOver;
     public GameObject YouWon;
-    public GameObject BricksPrefab;
+   // public GameObject BricksPrefab;
     public GameObject Paddle;
     public GameObject deathParticles;
     public static GameManager instance = null;
-    
+    public GameObject PracticeGreenBrick;
+    public GameObject PracticeOrangeCube;
+    public GameObject PracticeRedCube;
+    public int gridX;
+    public int gridY;
+    public float x_space;
+    public float y_space;
+
+
 
     private GameObject clonePaddle;
 
@@ -37,9 +45,42 @@ public class GameManager : MonoBehaviour
     //Cloning the paddle and ball when the player starts a new game
     public void Setup()
     {
-        clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
-        var Instantiatedbrick = Instantiate(BricksPrefab, transform.position, Quaternion.identity);
-        Instantiatedbrick.tag = BricksPrefab.tag;
+        //clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
+        //var Instantiatedbrick = Instantiate(BricksPrefab, transform.position, Quaternion.identity);
+        //Instantiatedbrick.tag = BricksPrefab.tag;
+
+        //Green
+        for (int x = 0; x < gridX; x++)
+        {
+            for (int y = 0; y < 2; y++)
+            {
+                var position = new Vector3(x_space * x, y_space * y, z: 0);
+
+                Instantiate(PracticeGreenBrick, position, Quaternion.identity);
+            }
+        }
+
+        //Orange
+        for (int x = 0; x < gridX; x++)
+            for (int y = 2; y < 4; y++)
+            {
+                var position = new Vector3(x_space * x, y_space * y, z: 0);
+                Instantiate(PracticeOrangeCube, position, Quaternion.identity);
+
+
+            }
+        //Red
+
+        for (int x = 0; x < gridX; x++)
+            for (int y = 4; y < 6; y++)
+            {
+                var position = new Vector3(x_space * x, y_space * y, z: 0);
+
+                Instantiate(PracticeRedCube, position, Quaternion.identity);
+
+            }
+
+
     }
 
     //Checking for when game is over, also added a slow motion for dramatic effect when the game is over.

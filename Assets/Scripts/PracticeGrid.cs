@@ -5,7 +5,7 @@ using UnityEngine;
 public class PracticeGrid : MonoBehaviour
 {
 
-    public GameObject prefab;
+    public GameObject PracticeGreenBrick;
     public GameObject PracticeOrangeCube;
     public GameObject PracticeRedCube;
     //public int ColumnLength =5, RowLength;
@@ -20,64 +20,49 @@ public class PracticeGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        //Green
         for (int x = 0; x < gridX; x++)
         {
-            for (int y = 0; y < gridY; y++)
+            for (int y = 0; y < 2; y++)
             {
-                var position = new Vector3(y, 0, x);
-                Instantiate(prefab, new Vector3(x_space * (x % gridX), x_space * (y % gridY)), Quaternion.identity);
+                var position = new Vector3(x_space * x, y_space * y, z: 0);
 
-                PracticeOrangeCube.transform.position = new Vector3(x, 3, y);
-                Instantiate(PracticeOrangeCube, new Vector3(x_space * (x % 11), x_space * (y % 2)), Quaternion.identity);
-
-                PracticeRedCube.transform.position = new Vector3(x, 2, y);
-                Instantiate(PracticeOrangeCube, new Vector3(x_space * (x % 2), x_space * (y % 4)), Quaternion.identity);
-
+                Instantiate(PracticeGreenBrick, position, Quaternion.identity);
             }
         }
 
-
-
-
-        
-
-
-
-
-
-            /*void spawngrid()
+        //Orange
+        for (int x = 0; x < gridX; x++)
+            for (int y = 2; y < 4; y++)
             {
-
-                for(int x=0; x < gridX; x++)
-                {
-
-                    for (int y =0; y < gridY; y++)
-                    {
+                var position = new Vector3(x_space * x, y_space * y, z: 0);
+                Instantiate(PracticeOrangeCube, position, Quaternion.identity);
 
 
-                        Vector3 spawnPosition = new Vector3(x * gridspace, 0, y * gridspace) + gridOrigin;
-                        PickAndSpawn(spawnPosition, Quaternion.identity);
+            }
+        //Red
 
-                    }
+        for (int x = 0; x < gridX; x++)
+            for (int y = 4; y < 6; y++)
+            {
+                var position = new Vector3(x_space * x, y_space * y, z: 0);
 
-
-
-
-                }
-
+                Instantiate(PracticeRedCube, position, Quaternion.identity);
 
             }
 
 
-            void PickAndSpawn(Vector3 positionToSpawn, Quaternion rotationToSpawn)
-            {
 
-
-
-                int randomIndex = Random.Range(0, prefab.Length);
-                gameObject clone = Instantiate(prefab, positionToSpawn, rotationToSpawn);
-            }*/
-        }
     }
+
+
+}
+
+
+
+
+
+
+
+
 

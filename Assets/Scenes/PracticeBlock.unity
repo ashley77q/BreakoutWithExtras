@@ -323,7 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7674f8bff7704e4682daa44bf561e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4200176172445534420, guid: cfc59322c0cdb4d3a9224b36a26cdeb0, type: 3}
+  PracticeGreenBrick: {fileID: 4200176172445534420, guid: cfc59322c0cdb4d3a9224b36a26cdeb0,
+    type: 3}
   PracticeOrangeCube: {fileID: 208922426499657931, guid: 207b1409de9814661a192742e7d3ecd8,
     type: 3}
   PracticeRedCube: {fileID: 7681359048062308212, guid: 5541b3b379ae246bab11c799f6d7d828,
