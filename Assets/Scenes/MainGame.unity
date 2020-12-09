@@ -206,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55383458}
   m_LocalRotation: {x: 0, y: 0, z: -0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -1.9, y: 2.3, z: 0}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -378,7 +378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349288729}
   m_LocalRotation: {x: 0, y: 0, z: 0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 22.1, y: 2.6, z: 0}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -499,11 +499,16 @@ MonoBehaviour:
   livesText: {fileID: 877468902}
   GameOver: {fileID: 789580645}
   YouWon: {fileID: 1733820653}
-  BricksPrefab: {fileID: 5740483944480127984, guid: acb3249eba59743f49abf252704d4601,
-    type: 3}
   Paddle: {fileID: 1521595369768615328, guid: da29f653d5a754aba8f3490b31a98708, type: 3}
   deathParticles: {fileID: 6551864734302727825, guid: b69f7fc0482e744f9b74ce746628db91,
     type: 3}
+  PracticeGreenBrick: {fileID: 0}
+  PracticeOrangeCube: {fileID: 0}
+  PracticeRedCube: {fileID: 0}
+  gridX: 0
+  gridY: 0
+  x_space: 0
+  y_space: 0
 --- !u!4 &543972202
 Transform:
   m_ObjectHideFlags: 0
@@ -772,7 +777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805659372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20.01, z: 0}
+  m_LocalPosition: {x: 11.6, y: -17.18, z: 0}
   m_LocalScale: {x: 50, y: -20, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1080,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266279879}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 10.13, y: 12.74, z: 0}
   m_LocalScale: {x: 1, y: 24, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1163,7 +1168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307811449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: -22.78}
+  m_LocalPosition: {x: 10.46, y: 1.32, z: -25.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1519,6 +1524,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1871491062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871491063}
+  - component: {fileID: 1871491064}
+  m_Layer: 0
+  m_Name: bricks2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871491063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871491062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.81, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1871491064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871491062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d07e72a016d4d47a76f063950fdee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  bricks: 66
+  resetDelay: 1
+  livesText: {fileID: 0}
+  GameOver: {fileID: 0}
+  YouWon: {fileID: 0}
+  Paddle: {fileID: 0}
+  deathParticles: {fileID: 0}
+  PracticeGreenBrick: {fileID: 4200176172445534420, guid: cfc59322c0cdb4d3a9224b36a26cdeb0,
+    type: 3}
+  PracticeOrangeCube: {fileID: 208922426499657931, guid: 207b1409de9814661a192742e7d3ecd8,
+    type: 3}
+  PracticeRedCube: {fileID: 7681359048062308212, guid: 5541b3b379ae246bab11c799f6d7d828,
+    type: 3}
+  gridX: 11
+  gridY: 6
+  x_space: 2
+  y_space: 2
 --- !u!1 &1876723970
 GameObject:
   m_ObjectHideFlags: 0
