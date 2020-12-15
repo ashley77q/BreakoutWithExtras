@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     
     public int lives = 3;
     public int bricks = 66;
+    public int bricks2 = 66;
     public float resetDelay = 1f;
     public Text livesText;
     public GameObject GameOver;
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
     //Cloning the paddle and ball when the player starts a new game
     public void Setup()
     {
-        //clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
+        clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
         //var Instantiatedbrick = Instantiate(BricksPrefab, transform.position, Quaternion.identity);
         //Instantiatedbrick.tag = BricksPrefab.tag;
 
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(PracticeRedCube, position, Quaternion.identity);
 
             }
-
+        clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
 
     }
 
