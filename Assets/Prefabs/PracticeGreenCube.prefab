@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7509977699675641003}
   - component: {fileID: 9199447548162439262}
   - component: {fileID: -3412554634105263962}
+  - component: {fileID: 8717565838878543499}
   m_Layer: 0
   m_Name: PracticeGreenCube
-  m_TagString: Untagged
+  m_TagString: Green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +88,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4200176172445534420}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f23729259ca38404e97b254a9daafe29, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -105,10 +106,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7674f8bff7704e4682daa44bf561e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PracticeGreenCube: {fileID: 4200176172445534420}
+  PracticeGreenBrick: {fileID: 0}
   PracticeOrangeCube: {fileID: 0}
   PracticeRedCube: {fileID: 0}
-  ColumnLength: 0
-  RowLength: 0
+  gridX: 0
+  gridY: 0
   x_space: 0
   y_space: 0
+--- !u!114 &8717565838878543499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200176172445534420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36908b60a43664b0e9483b04d03f61ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block_health: 7
+  BrickParticle: {fileID: 7128439035652460617, guid: e611f3c2e4f4743d894879be3610b343,
+    type: 3}
+  white: {fileID: 2100000, guid: 69b9f90a58a7948d6a0cf5b7750223bf, type: 2}
