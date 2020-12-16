@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
     
     public int lives = 3;
-    public int bricks = 66;
-    public int bricks2 = 66;
+    //public int bricks = 66;
+    
     public float resetDelay = 1f;
     public Text livesText;
     public GameObject GameOver;
@@ -80,14 +80,14 @@ public class GameManager : MonoBehaviour
                 Instantiate(PracticeRedCube, position, Quaternion.identity);
 
             }
-        clonePaddle = Instantiate(Paddle, transform.position, Quaternion.identity) as GameObject;
+        
 
     }
 
     //Checking for when game is over, also added a slow motion for dramatic effect when the game is over.
     void CheckGameOver()
     {
-        if (bricks < 1)
+        if (gridX  < 1)
         {
             YouWon.SetActive(true);
             Time.timeScale = .25f;
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
     //Destroying brick
     public void DestroyBrick()
     {
-        bricks--;
+        gridX --;
         CheckGameOver();
        
     }

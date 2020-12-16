@@ -206,8 +206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55383458}
   m_LocalRotation: {x: 0, y: 0, z: -0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: -1.9, y: 2.3, z: 0}
-  m_LocalScale: {x: 1, y: 20, z: 1}
+  m_LocalPosition: {x: -1.99, y: 0.63, z: 0}
+  m_LocalScale: {x: 1, y: 22, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -378,8 +378,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349288729}
   m_LocalRotation: {x: 0, y: 0, z: 0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: 22.1, y: 2.6, z: 0}
-  m_LocalScale: {x: 1, y: 20, z: 1}
+  m_LocalPosition: {x: 22.22, y: 0.44, z: 0}
+  m_LocalScale: {x: 1, y: 22, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -494,8 +494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
-  bricks: 66
-  bricks2: 0
   resetDelay: 1
   livesText: {fileID: 877468902}
   GameOver: {fileID: 789580645}
@@ -503,16 +501,16 @@ MonoBehaviour:
   Paddle: {fileID: 1521595369768615328, guid: da29f653d5a754aba8f3490b31a98708, type: 3}
   deathParticles: {fileID: 6551864734302727825, guid: b69f7fc0482e744f9b74ce746628db91,
     type: 3}
-  PracticeGreenBrick: {fileID: 4095070441758514152, guid: 58c0cb5a12db844eabfaebfad2658599,
+  PracticeGreenBrick: {fileID: 4200176172445534420, guid: cfc59322c0cdb4d3a9224b36a26cdeb0,
     type: 3}
-  PracticeOrangeCube: {fileID: 4095070441758514152, guid: 58c0cb5a12db844eabfaebfad2658599,
+  PracticeOrangeCube: {fileID: 208922426499657931, guid: 207b1409de9814661a192742e7d3ecd8,
     type: 3}
-  PracticeRedCube: {fileID: 4095070441758514152, guid: 58c0cb5a12db844eabfaebfad2658599,
+  PracticeRedCube: {fileID: 7681359048062308212, guid: 5541b3b379ae246bab11c799f6d7d828,
     type: 3}
-  gridX: 0
-  gridY: 0
-  x_space: 0
-  y_space: 0
+  gridX: 11
+  gridY: 6
+  x_space: 2
+  y_space: 2
 --- !u!4 &543972202
 Transform:
   m_ObjectHideFlags: 0
@@ -781,7 +779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805659372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6, y: -17.18, z: 0}
+  m_LocalPosition: {x: 11.6, y: -20.15, z: 0}
   m_LocalScale: {x: 50, y: -20, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1089,7 +1087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266279879}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 10.13, y: 12.74, z: 0}
+  m_LocalPosition: {x: 10.13, y: 12.05, z: 0}
   m_LocalScale: {x: 1, y: 24, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1269,65 +1267,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1639405824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1639405825}
-  - component: {fileID: 1639405826}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1639405825
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639405824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.624, y: 3.88, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1639405826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639405824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d07e72a016d4d47a76f063950fdee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  bricks: 66
-  bricks2: 66
-  resetDelay: 1
-  livesText: {fileID: 0}
-  GameOver: {fileID: 0}
-  YouWon: {fileID: 0}
-  Paddle: {fileID: 1521595369768615328, guid: da29f653d5a754aba8f3490b31a98708, type: 3}
-  deathParticles: {fileID: 0}
-  PracticeGreenBrick: {fileID: 0}
-  PracticeOrangeCube: {fileID: 0}
-  PracticeRedCube: {fileID: 0}
-  gridX: 0
-  gridY: 0
-  x_space: 0
-  y_space: 0
 --- !u!1 &1666800695
 GameObject:
   m_ObjectHideFlags: 0
