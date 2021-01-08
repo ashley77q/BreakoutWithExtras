@@ -5,9 +5,11 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
 
-
+    [SerializeField]
     private int rows = 5;
+    [SerializeField]
     private int cols = 8;
+    [SerializeField]
     private float tileSize = 1;
 
 
@@ -20,7 +22,7 @@ public class GridManager : MonoBehaviour
     
     private void GenerateGrid()
     {
-        GameObject referenceTile = (GameObject)Instantiate(Resources.Load("backyard_00"));
+        GameObject referenceTile = (GameObject)Instantiate(Resources.Load("rock"));
         for (int row = 0; row < rows; row++)
         {
 
@@ -41,6 +43,12 @@ public class GridManager : MonoBehaviour
 
 
         Destroy(referenceTile);
+
+        //Center the grid
+        float gridW = cols * tileSize;
+        float gridH = rows * tileSize;
+
+        transform.position = new Vector2(-gridW / 2 + tileSize / 2, gridH / 2 - tileSize / 2);
 
     }
 
