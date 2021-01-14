@@ -34,7 +34,7 @@ public class GridManager : MonoBehaviour
                 float posX = col * tileSize;
                 float posY = row * -tileSize;
 
-                tile.transform.position = new Vector2(posX, posY);
+                tile.transform.localPosition = new Vector2(posX, posY);
 
             }
 
@@ -48,7 +48,7 @@ public class GridManager : MonoBehaviour
         float gridW = cols * tileSize;
         float gridH = rows * tileSize;
 
-        transform.position = new Vector2(-gridW / 2 + tileSize / 2, gridH / 2 - tileSize / 2);
+        transform.position = new Vector3(-gridW / 2 + tileSize / 2, gridH / 2 - tileSize / 2, 10);
 
     }
 

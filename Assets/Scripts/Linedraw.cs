@@ -34,7 +34,7 @@ public class Linedraw : MonoBehaviour
             
 
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
 
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
