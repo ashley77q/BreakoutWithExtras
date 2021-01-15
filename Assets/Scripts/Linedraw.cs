@@ -9,6 +9,8 @@ public class Linedraw : MonoBehaviour
     private LineRenderer lineRend;
     private Vector2 mousePos;
     private Vector2 startMousePoS;
+    public float Midpoint=5f;
+    public InputField changePosition;
   
 
 
@@ -38,14 +40,23 @@ public class Linedraw : MonoBehaviour
         {
 
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
             lineRend.SetPosition(0, new Vector3(startMousePoS.x, startMousePoS.y, 0f));
             lineRend.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
+
             distance = (mousePos - startMousePoS).magnitude;
             distanceText.text = distance.ToString("F2") + "meters";
 
+            //var midpoint = Vector3.Lerp(mousePos, startMousePoS, Midpoint);
+            var midpoint = (mousePos + startMousePoS) / 2f;
+            transform.position = midpoint;
+
+            
 
 
-        }
+
+
+}
 
 
     }
