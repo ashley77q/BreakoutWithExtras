@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Linedraw : MonoBehaviour
 {
     //my variables
     private LineRenderer lineRend;
     private Vector2 mousePos;
     private Vector2 startMousePoS;
-    public float Midpoint=5f;
-    public InputField changePosition;
-  
+    public GameObject Midpoint;
+    public  float changePosition;
 
-
+   
     [SerializeField]
     //Display distance between two points
     private Text distanceText;
@@ -24,6 +24,7 @@ public class Linedraw : MonoBehaviour
     {
         lineRend = GetComponent<LineRenderer>();
         lineRend.positionCount = 2;
+        
     }
     //Update
     void Update()
@@ -48,15 +49,21 @@ public class Linedraw : MonoBehaviour
             distanceText.text = distance.ToString("F2") + "meters";
 
             //var midpoint = Vector3.Lerp(mousePos, startMousePoS, Midpoint);
-            var midpoint = (mousePos + startMousePoS) / 2f;
-            transform.position = midpoint;
+
+            //var midpoint = (mousePos + startMousePoS) / changePosition;
+            //transform.position = midpoint;
+
 
             
 
+            //var midpoint = (mousePos - startMousePoS) / changePosition;
+            transform.position = Vector3.Lerp(mousePos,startMousePoS,changePosition);
 
 
-
-}
+            //float disCovered = (Time.time - startTime) * speed;
+            //transform.position = Vector3.Lerp(mousePos.position, startMousePoS.position, changePosition);
+            //float fractionOfJourney = distCovered / journeyLength;
+        }
 
 
     }
