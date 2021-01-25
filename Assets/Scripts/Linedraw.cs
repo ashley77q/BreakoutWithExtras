@@ -12,6 +12,7 @@ public class Linedraw : MonoBehaviour
     private Vector2 startMousePoS;
     public GameObject Midpoint;
     public  float changePosition;
+    public bool snapToGrid = true;
 
    
     [SerializeField]
@@ -63,6 +64,14 @@ public class Linedraw : MonoBehaviour
             //float disCovered = (Time.time - startTime) * speed;
             //transform.position = Vector3.Lerp(mousePos.position, startMousePoS.position, changePosition);
             //float fractionOfJourney = distCovered / journeyLength;
+            if (snapToGrid)
+            {
+
+
+                transform.position = new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
+
+
+            }
         }
 
 

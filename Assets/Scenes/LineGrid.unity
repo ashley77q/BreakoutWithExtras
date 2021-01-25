@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Midpoint: {fileID: 1047394573}
-  changePosition: 0.7
+  changePosition: 0.5
   distanceText: {fileID: 1051771460}
 --- !u!120 &1638593504
 LineRenderer:
