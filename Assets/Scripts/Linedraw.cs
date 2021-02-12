@@ -10,11 +10,14 @@ public class Linedraw : MonoBehaviour
     private LineRenderer lineRend;
     private Vector2 mousePos;
     private Vector2 startMousePoS;
-    public GameObject Midpoint;
+    public GameObject line;
     public  float changePosition;
     public bool snapToGrid = true;
+    public bool isDragged = true;
+    public bool smartDrag = true;
+    Vector2 initialPositionObject;
 
-   
+
     [SerializeField]
     //Display distance between two points
     private Text distanceText;
@@ -25,6 +28,7 @@ public class Linedraw : MonoBehaviour
     {
         lineRend = GetComponent<LineRenderer>();
         lineRend.positionCount = 2;
+        
         
     }
     //Update
@@ -49,29 +53,45 @@ public class Linedraw : MonoBehaviour
             distance = (mousePos - startMousePoS).magnitude;
             distanceText.text = distance.ToString("F2") + "meters";
 
-            //var midpoint = Vector3.Lerp(mousePos, startMousePoS, Midpoint);
 
-            //var midpoint = (mousePos + startMousePoS) / changePosition;
-            //transform.position = midpoint;
+            //transform.position = Vector3.Lerp(mousePos,startMousePoS,changePosition);
 
 
-            
-
-            //var midpoint = (mousePos - startMousePoS) / changePosition;
-            transform.position = Vector3.Lerp(mousePos,startMousePoS,changePosition);
+            transform.position = Vector3.Lerp(startMousePoS, mousePos,changePosition );
 
 
-            //float disCovered = (Time.time - startTime) * speed;
-            //transform.position = Vector3.Lerp(mousePos.position, startMousePoS.position, changePosition);
-            //float fractionOfJourney = distCovered / journeyLength;
-            if (snapToGrid)
+            /*if (isDragged)
             {
 
 
-                transform.position = new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
+                transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+
 
 
             }
+            else
+
+
+            {
+                transform.position = startMousePoS +
+                    (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition) - startMousePoS;
+
+
+
+            }*/
+            if (snapToGrid)
+            {
+
+                
+              //transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
+
+                mousePos = new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
+
+
+            }
+
+
         }
 
 

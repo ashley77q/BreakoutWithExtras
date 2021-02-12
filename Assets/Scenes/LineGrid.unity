@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rows: 5
   cols: 11
-  tileSize: 1.45
+  tileSize: 1
 --- !u!4 &544460639
 Transform:
   m_ObjectHideFlags: 0
@@ -530,8 +530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82fce56e99a54950b964644d0e117e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Midpoint: {fileID: 1047394573}
+  line: {fileID: 1638593502}
   changePosition: 0.5
+  snapToGrid: 1
+  isDragged: 1
+  smartDrag: 1
   distanceText: {fileID: 1051771460}
 --- !u!120 &1638593504
 LineRenderer:

@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour
     private int cols = 8;
     [SerializeField]
     private float tileSize = 1;
+    //private Vector3 tileSizee;
 
 
     // Start is called before the first frame update
@@ -19,10 +20,50 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
     }
 
-    
+    /*private void OnDrawGizmos()
+    {
+        SnapToGrid();
+    }
+
+    private void SnapToGrid()
+    {
+
+
+
+
+        var position = new Vector3(
+
+
+            Mathf.RoundToInt(this.transform.position.x),
+            Mathf.RoundToInt(this.transform.position.y),
+            Mathf.RoundToInt(this.transform.position.z)
+
+            );
+        this.transform.position = position;
+    }
+
+    private void SnapToGrid2()
+    {
+        var position = new Vector3(
+
+
+
+
+
+            Mathf.Round(this.transform.position.x / this.tileSizee.x) * this.tileSizee.x,
+             Mathf.Round(this.transform.position.x / this.tileSizee.y) * this.tileSizee.y,
+              Mathf.Round(this.transform.position.x / this.tileSizee.z) * this.tileSizee.z
+              );
+
+
+        this.transform.position = position;
+
+    }*/
+
+
     private void GenerateGrid()
     {
-        GameObject referenceTile = (GameObject)Instantiate(Resources.Load("rock"));
+        GameObject referenceTile = (GameObject)Instantiate(Resources.Load("Grass"));
         for (int row = 0; row < rows; row++)
         {
 
