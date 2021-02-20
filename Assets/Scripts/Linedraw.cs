@@ -50,6 +50,8 @@ public class Linedraw : MonoBehaviour
             lineRend.SetPosition(0, new Vector3(startMousePoS.x, startMousePoS.y, 0f));
             lineRend.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
 
+            
+
             distance = (mousePos - startMousePoS).magnitude;
             distanceText.text = distance.ToString("F2") + "meters";
 
@@ -60,35 +62,15 @@ public class Linedraw : MonoBehaviour
             transform.position = Vector3.Lerp(startMousePoS, mousePos,changePosition );
 
 
-            /*if (isDragged)
-            {
-
-
-                transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-
-
-
-            }
-            else
-
-
-            {
-                transform.position = startMousePoS +
-                    (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition) - startMousePoS;
-
-
-
-            }*/
             if (snapToGrid)
             {
-
                 
-              //transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
+
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
                 mousePos = new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
-
+                lineRend.SetPosition(1, mousePos);
             }
 
 
