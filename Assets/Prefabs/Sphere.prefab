@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4692133550486077527}
   - component: {fileID: 4436860673777845378}
   - component: {fileID: -4146839767763118696}
+  - component: {fileID: 3568602851761545666}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -111,6 +112,7 @@ MonoBehaviour:
   snapToGrid: 1
   isDragged: 1
   smartDrag: 1
+  numberOfSegments: 0
   distanceText: {fileID: 0}
   _spherePrefab: {fileID: 0}
 --- !u!120 &-4146839767763118696
@@ -209,3 +211,16 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &3568602851761545666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692133550486077525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664f596af90bd4362b370ef7aceb07c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfSegments: 0

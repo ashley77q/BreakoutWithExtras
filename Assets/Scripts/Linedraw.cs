@@ -17,6 +17,7 @@ public class Linedraw : MonoBehaviour
     public bool isDragged = true;
     public bool smartDrag = true;
     Vector2 initialPositionObject;
+    public int numberOfSegments;
 
 
     [SerializeField]
@@ -50,8 +51,9 @@ public class Linedraw : MonoBehaviour
     }
 
     private List<Transform> SphereDestroy = new List<Transform>();
+    //private int numberOfSegments;
 
-    private void DrawDots()
+    public void DrawDots()
     {
         // Destroy Dots from last frame
         List<Transform> copyOfTheSpheresList = new List<Transform>(SphereDestroy);
@@ -62,34 +64,29 @@ public class Linedraw : MonoBehaviour
         }
 
         //Changes the number of dots that appear on the line
+        //int numberOfSegmeints = Click.AddDots;
         //int numberOfSegments = 5;
-        int numberOfSegments = 7;
+
+
+       // Vector3[] points = new Vector3[numberOfSegments + 1];
+        //for (int step = 0; step <= numberOfSegments; step++)
+       
+        {
             
 
-        Vector3[] points = new Vector3[numberOfSegments + 1];
-        for (int step = 0; step <= numberOfSegments; step++)
-
-        //{
-
-          //  Vector3 dotPosition = points( step * numberOfSegments / distance);
-
-
-       // }
-
-
-        {
-            float percentOfTheLength = (float)step / numberOfSegments;
-            Vector3 positionOfTheDot = Vector3.Lerp(startMousePoS, mousePos, percentOfTheLength);
-            points[step] = positionOfTheDot;
+        
+            //float percentOfTheLength = (float)step / numberOfSegments;
+            //Vector3 positionOfTheDot = Vector3.Lerp(startMousePoS, mousePos, percentOfTheLength);
+            //points[step] = positionOfTheDot;
         }
         
 
 
         // At this point, we have all the points.
-        foreach (var dotPosition in points)
+       // foreach (var dotPosition in points)
         {
-            Transform sphereInstance = Instantiate(_spherePrefab, dotPosition, Quaternion.identity);
-            SphereDestroy.Add(sphereInstance);
+            //Transform sphereInstance = Instantiate(_spherePrefab, dotPosition, Quaternion.identity);
+            //SphereDestroy.Add(sphereInstance);
         }
     }
 
@@ -118,7 +115,21 @@ public class Linedraw : MonoBehaviour
             lineRend.SetPosition(1, mousePos);
             
         }
+
+        
+
     }
+
+    public void AddDots()
+    {
+
+
+        numberOfSegments++;
+
+
+
+    }
+
 }
 
 
