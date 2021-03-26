@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4692133550486077513}
   - component: {fileID: 4692133550486077512}
   - component: {fileID: 4692133550486077527}
-  - component: {fileID: 4436860673777845378}
   - component: {fileID: -4146839767763118696}
-  - component: {fileID: 3568602851761545666}
+  - component: {fileID: 5351198519964878018}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -95,26 +94,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 5, y: 5, z: 0}
---- !u!114 &4436860673777845378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4692133550486077525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e82fce56e99a54950b964644d0e117e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line: {fileID: 0}
-  changePosition: 0
-  snapToGrid: 1
-  isDragged: 1
-  smartDrag: 1
-  numberOfSegments: 0
-  distanceText: {fileID: 0}
-  _spherePrefab: {fileID: 0}
 --- !u!120 &-4146839767763118696
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -211,7 +190,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &3568602851761545666
+--- !u!114 &5351198519964878018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +199,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4692133550486077525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664f596af90bd4362b370ef7aceb07c6, type: 3}
+  m_Script: {fileID: 11500000, guid: e82fce56e99a54950b964644d0e117e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  line: {fileID: 0}
+  changePosition: 0
+  snapToGrid: 1
+  isDragged: 1
+  smartDrag: 1
   numberOfSegments: 0
+  distanceText: {fileID: 0}
+  _spherePrefab: {fileID: 4692133550486077526}

@@ -12,12 +12,12 @@ public class Linedraw : MonoBehaviour
     private Vector2 mousePos;
     private Vector2 startMousePoS;
     public GameObject line;
-    public  float changePosition;
+    public float changePosition;
     public bool snapToGrid = true;
     public bool isDragged = true;
     public bool smartDrag = true;
     Vector2 initialPositionObject;
-    public int numberOfSegments;
+    public int numberOfSegments ;
 
 
     [SerializeField]
@@ -30,8 +30,8 @@ public class Linedraw : MonoBehaviour
     {
         lineRend = GetComponent<LineRenderer>();
         lineRend.positionCount = 2;
-        
-        
+
+
     }
     //Update
     void Update()
@@ -55,38 +55,71 @@ public class Linedraw : MonoBehaviour
 
     public void DrawDots()
     {
-        // Destroy Dots from last frame
-        List<Transform> copyOfTheSpheresList = new List<Transform>(SphereDestroy);
-        foreach (var sphere in copyOfTheSpheresList)
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            SphereDestroy.Remove(sphere);
-            Destroy(sphere.gameObject);
+            numberOfSegments++;
         }
 
-        //Changes the number of dots that appear on the line
-        //int numberOfSegmeints = Click.AddDots;
-        //int numberOfSegments = 5;
+            // Destroy Dots from last frame
+            List<Transform> copyOfTheSpheresList = new List<Transform>(SphereDestroy);
+            foreach (var sphere in copyOfTheSpheresList)
+            {
+               SphereDestroy.Remove(sphere);
+               Destroy(sphere.gameObject);
+            }
+
+            //Changes the number of dots that appear on the line
+
+            //int numberOfSegments = 1;
 
 
-       // Vector3[] points = new Vector3[numberOfSegments + 1];
-        //for (int step = 0; step <= numberOfSegments; step++)
-       
-        {
-            
+
+            Vector3[] points = new Vector3[numberOfSegments + 1];
+            for (int step = 0; step <= numberOfSegments; step++)
+            {
+
+
+                float percentOfTheLength = (float)step;
+                Vector3 positionOfTheDot = Vector3.Lerp(startMousePoS, mousePos, percentOfTheLength);
+                points[step] = positionOfTheDot;
+
+
+                foreach (var dotPosition in points)
+                {
+                    Transform sphereInstance = Instantiate(_spherePrefab, dotPosition, Quaternion.identity);
+                    SphereDestroy.Add(sphereInstance);
+                }
+
+
+            }
+        
+
 
         
+
+        //Vector3[] points = new Vector3[numberOfSegments + 1];
+        //for (int step = 0; step <= numberOfSegments; step++)
+        //Vector3[] points = new Vector3[numberOfSegments + 1];
+        //for (int step = 0; step <= numberOfSegments; step++)
+        {
+
+            //float percentOfTheLength = (float)step / numberOfSegments;
+            // Vector3 positionOfTheDot = Vector3.Lerp(startMousePoS, mousePos, percentOfTheLength);
+
+
+
             //float percentOfTheLength = (float)step / numberOfSegments;
             //Vector3 positionOfTheDot = Vector3.Lerp(startMousePoS, mousePos, percentOfTheLength);
-            //points[step] = positionOfTheDot;
+            // points[step] = positionOfTheDot;
         }
-        
+
 
 
         // At this point, we have all the points.
-       // foreach (var dotPosition in points)
+        // foreach (var dotPosition in points)
         {
-            //Transform sphereInstance = Instantiate(_spherePrefab, dotPosition, Quaternion.identity);
-            //SphereDestroy.Add(sphereInstance);
+            // Transform sphereInstance = Instantiate(_spherePrefab, dotPosition, Quaternion.identity);
+            //  SphereDestroy.Add(sphereInstance);
         }
     }
 
@@ -99,8 +132,8 @@ public class Linedraw : MonoBehaviour
         lineRend.SetPosition(0, new Vector3(startMousePoS.x, startMousePoS.y, 0f));
         lineRend.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
         distance = (mousePos - startMousePoS).magnitude;
-        distanceText.text = distance.ToString("F2") + "meters";
-        transform.position = Vector3.Lerp(mousePos,startMousePoS,changePosition);
+        //distanceText.text = distance.ToString("F2") + "meters";
+        transform.position = Vector3.Lerp(mousePos, startMousePoS, changePosition);
 
         // Originally for moving the sphere at 50%
         transform.position = Vector3.Lerp(startMousePoS, mousePos, changePosition);
@@ -113,23 +146,22 @@ public class Linedraw : MonoBehaviour
             // Setting the end point to the sphere transform at 50%
             mousePos = new Vector2(Mathf.RoundToInt(mousePos.x), Mathf.RoundToInt(mousePos.y));
             lineRend.SetPosition(1, mousePos);
-            
+
         }
 
-        
-
-    }
-
-    public void AddDots()
-    {
-
-
-        numberOfSegments++;
-
 
 
     }
 
+   // public void Spawn(Vector3 position)
+    //{
+
+
+        //Instantiate(_spherePrefab).transform.position = position;
+
+       // Instantiate(_spherePrefab, dotPosition, Quaternion.identity);
+        //
+   // }
 }
 
 
